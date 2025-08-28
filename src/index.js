@@ -135,7 +135,7 @@ app.post('/send-email', contactLimiter, contactValidation, async (req, res) => {
     `.trim();
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: process.env.FROM,
       to: process.env.COMPANY_EMAIL, // Email donde quiere recibir los mensajes
       subject: `[CONTACTO WEB] ${asunto}`,
       text: emailContent,
